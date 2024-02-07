@@ -24,7 +24,7 @@ variable availability_domain_name {
 
 variable instance_shape {
   description = "Shape of Jenkins VM compute instance to provision and install Jenkins in"
-  default = "VM.Standard.E3.Flex"
+  default = "VM.Standard.E4.Flex"
 }
 variable instance_ocpus {
   description = "Number of OCPUs the Jenkins VM compute instance will have"
@@ -80,6 +80,6 @@ variable subnet_dns {
 locals {
   availability_domain_name   = var.availability_domain_name != null ? var.availability_domain_name : data.oci_identity_availability_domains.ADs.availability_domains[0].name
   instance_shape             = var.instance_shape
-  compute_flexible_shapes    = ["VM.Standard.E3.Flex","VM.Standard.E4.Flex"]
+  compute_flexible_shapes    = ["VM.Standard.E4.Flex"]
   is_flexible_instance_shape = contains(local.compute_flexible_shapes, local.instance_shape)
 }
