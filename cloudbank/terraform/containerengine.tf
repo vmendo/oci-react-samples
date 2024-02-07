@@ -12,7 +12,7 @@ resource oci_containerengine_cluster cloudbank {
   image_policy_config {
     is_policy_enabled = "false"
   }
-  kubernetes_version = "v1.23.8"
+  kubernetes_version = "v1.28.2"
   name               = "cloudbank"
   options {
     add_ons {
@@ -42,7 +42,7 @@ resource oci_containerengine_node_pool pool {
     key   = "name"
     value = "cloudbank"
   }
-  kubernetes_version = "v1.23.8"
+  kubernetes_version = "v1.28.2"
   name               = "cloudbank-pool"
   node_config_details {
     placement_configs {
